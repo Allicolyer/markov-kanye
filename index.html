@@ -11,25 +11,33 @@
   <body>
     <header>
       <nav>
-        <a href="#">
+        <a class="mx-2" href="#">
           <img id="logo" src="assets/kanye.png" />
         </a>
-        <div class="nav-container">
-          <a class="nav-link" href="#">About</a>
+        <div class="nav-container mx-2">
+          <a class="nav-link mr-2" href="#">About</a>
           <a class="nav-link" href="#">Github</a>
         </div>
       </nav>
     </header>
-    <div class="content">
+    <div class="content vertical-center">
       <h1 class="title">Let Kanye Speak</h1>
-      <div class="button" id="quote_button">
+      <div class="button mb-3" id="quote_button">
         Generate Quote
       </div>
-      <div class="speech-container">
+      <div class="speech-container mb-3">
         <img class="kanye-img" src="assets/kanye.png" />
         <div class="speech-bubble">
-          <p id="quote_text"></p>
+          <p class="p-2" id="quote_text"></p>
         </div>
+      </div>
+      <div class="switch-container mb-3">
+        <span class="mr-2"> More Random </span>
+        <label class="switch">
+          <input type="checkbox" name="randomness" />
+          <span class="slider round"></span>
+        </label>
+        <span class="ml-2">Less Random </span>
       </div>
     </div>
   </body>
