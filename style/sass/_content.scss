@@ -1,0 +1,26 @@
+body {
+  font: 100% $font-stack;
+  background-color: $background-color;
+  color: $primary-color;
+}
+
+.kanye-img {
+  width: 25%;
+  @media screen and (max-width: $medium) {
+    width: 45%;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  font-family: $headings-font;
+}

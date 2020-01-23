@@ -1,0 +1,37 @@
+.button {
+  display: inline-block;
+  padding: 0.5em 3em;
+  border: 0.16em solid $primary-color;
+  margin: 0 0.3em 0.3em 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: $secondary-color;
+  border-color: $primary-color;
+  background-color: $primary-color;
+  text-align: center;
+  transition: all 0.15s;
+  &:hover {
+    color: $primary-color;
+    border-color: $primary-color;
+    background-color: $secondary-color;
+  }
+  &:active {
+    border-color: $primary-color;
+  }
+}
+
+.button-secondary {
+  @extend .button;
+  color: $primary-color;
+  border-color: $secondary-color;
+  background-color: $secondary-color;
+}
+
+// @media all and (max-width:30em){
+//    a.button2{
+//     display:block;
+//     margin:0.4em auto;
+//    }

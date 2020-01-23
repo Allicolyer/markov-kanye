@@ -1,0 +1,117 @@
+@font-face {
+  font-family: "Milford Black";
+  src: url(../assets/milfbk__.ttf) format("truetype");
+}
+.button, .button-secondary {
+  display: inline-block;
+  padding: 0.5em 3em;
+  border: 0.16em solid #ef8b56;
+  margin: 0 0.3em 0.3em 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+  border-color: #ef8b56;
+  background-color: #ef8b56;
+  text-align: center;
+  transition: all 0.15s;
+}
+.button:hover, .button-secondary:hover {
+  color: #ef8b56;
+  border-color: #ef8b56;
+  background-color: #ffffff;
+}
+.button:active, .button-secondary:active {
+  border-color: #ef8b56;
+}
+
+.button-secondary {
+  color: #ef8b56;
+  border-color: #ffffff;
+  background-color: #ffffff;
+}
+
+body {
+  font: 100% Helvetica, sans-serif;
+  background-color: #ffffff;
+  color: #ef8b56;
+}
+
+.kanye-img {
+  width: 25%;
+}
+@media screen and (max-width: 800px) {
+  .kanye-img {
+    width: 45%;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  font-family: "Milford Black", "Roboto", sans-serif;
+}
+
+.card {
+  padding: 2px 16px;
+  margin: 15px 0px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 40%;
+  min-height: 100px;
+  background-color: #ffffff;
+}
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+@media screen and (max-width: 800px) {
+  .card {
+    width: 100%;
+  }
+}
+
+.speech-bubble {
+  position: relative;
+  background: #00aabb;
+  border-radius: 0.4em;
+}
+
+.speech-bubble:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 31px solid transparent;
+  border-right-color: #00aabb;
+  border-left: 0;
+  border-bottom: 0;
+  margin-top: -15.5px;
+}
+
+nav {
+  background-color: #ef8b56;
+  color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 50px;
+}
+
+#logo {
+  width: 50px;
+}
+
+/*# sourceMappingURL=main.css.map */

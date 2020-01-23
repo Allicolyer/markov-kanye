@@ -1,0 +1,13 @@
+nav {
+  background-color: $primary-color;
+  color: $secondary-color;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 50px;
+}
+
+#logo {
+  width: 50px;
+}
