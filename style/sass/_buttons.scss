@@ -23,13 +23,6 @@
   }
 }
 
-.button-secondary {
-  @extend .button;
-  color: $primary-color;
-  border-color: $secondary-color;
-  background-color: $secondary-color;
-}
-
 // @media all and (max-width:30em){
 //    a.button2{
 //     display:block;

@@ -6,8 +6,14 @@ nav {
   align-items: center;
   justify-content: space-between;
   min-height: 50px;
+  a {
+    margin: 0 15px;
+    color: $secondary-color;
+    text-decoration: none;
+  }
 }
 
 #logo {
-  width: 50px;
+  width: 30px;
+  height: auto;
 }

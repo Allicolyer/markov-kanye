@@ -4,13 +4,6 @@ body {
   color: $primary-color;
 }
 
-.kanye-img {
-  width: 25%;
-  @media screen and (max-width: $medium) {
-    width: 45%;
-  }
-}
-
 .content {
   display: flex;
   flex-direction: column;
@@ -18,6 +11,20 @@ body {
   align-items: center;
   justify-content: center;
   margin: 0 auto;
+}
+
+.kanye-img {
+  width: 200px;
+  height: 244px;
+}
+
+.speech-container {
+  display: flex;
+  flex-direction: row;
+  @media screen and (max-width: $medium) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .title {
