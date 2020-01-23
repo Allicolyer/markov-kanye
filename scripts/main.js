@@ -8,8 +8,8 @@ let map = second_order_map;
 //wait until the DOM is loaded before adding event listeners
 document.addEventListener("DOMContentLoaded", function() {
   const checkbox = document.querySelector("input[name=randomness]");
-  const quote_text = document.getElementById("quote_text");
-  const quote_button = document.getElementById("quote_button");
+  const quoteText = document.getElementById("quote-text");
+  const quoteButton = document.getElementById("quote_button");
 
   //toggles between the first order and second order markov chains
   checkbox.addEventListener("change", function() {
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   //Generate new setnence
-  quote_button.onclick = () => {
-    quote_text.innerHTML = generate_sentence(map);
+  quoteButton.onclick = () => {
+    quoteText.innerHTML = generate_sentence(map);
   };
 });

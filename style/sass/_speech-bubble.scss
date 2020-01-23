@@ -1,3 +1,5 @@
+// source: http://nicolasgallagher.com/pure-css-speech-bubbles/demo/default.css
+
 .speech-bubble {
   position: relative;
   border: 5px solid $primary-color;
@@ -8,6 +10,13 @@
   border-radius: 10px;
   width: 400px;
   min-height: 150px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
   @media screen and (max-width: $small) {
     width: 100%;
   }
@@ -43,5 +52,3 @@
     width: 0;
   }
 }
-
-// source: http://nicolasgallagher.com/pure-css-speech-bubbles/demo/default.css

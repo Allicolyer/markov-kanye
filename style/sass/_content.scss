@@ -12,17 +12,6 @@ body {
   justify-content: center;
 }
 
-.kanye-img {
-  @extend .mr-2;
-  width: 200px;
-  height: 244px;
-  @media screen and (max-width: $medium) {
-    margin: 0;
-    //can't extend .mb-3 inside media query
-    margin-bottom: 15px;
-  }
-}
-
 .switch-container {
   display: flex;
   flex-direction: row;
@@ -34,10 +23,10 @@ body {
   font-family: $headings-font;
 }
 
-.less-random {
+.right-align {
   text-align: right;
 }
 
-.more-random {
+.left-align {
   text-align: left;
 }

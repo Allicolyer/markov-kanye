@@ -1,3 +1,5 @@
+//source https://fdossena.com/?p=html5cool/buttons/i.frag
+
 .button {
   display: inline-block;
   border-radius: 2em;
@@ -15,7 +17,7 @@
   &:hover {
     color: $primary-color;
     border-color: $primary-color;
-    background-color: $secondary-color;
+    background-color: $background-color;
   }
   &:active {
     border-color: $primary-color;
@@ -24,5 +26,3 @@
      display: block;
   }
 }
-
-//source https://fdossena.com/?p=html5cool/buttons/i.frag

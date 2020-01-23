@@ -255,8 +255,6 @@ export const kanye_quotes = [
   "I want people to feel like it's okay to create.",
   "It's okay to not be boxed in.",
   "I want people to feel like awesome is possible.",
-  "I refuse to accept other people's ideas of happiness for me.",
-  "As if there's a ‘one size fits all' standard for happiness.",
   "People will have a problem with whatever you do.",
   "At the end of the day, nobody can determine what you need to do in order to be successful and why would you listen to someone who is not successful tell you what you need to do.",
   "When you're the absolute best, you get hated on the most.",
