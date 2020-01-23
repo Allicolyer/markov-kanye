@@ -92,6 +92,7 @@ export const generate_sentence = map => {
     .replace(/ lol /g, " LOL ")
     .replace(/marc jacobs/gi, "Marc Jacobs")
     .replace(/michael jordan/gi, "Michael Jordan")
+    .replace(/michael jackson/gi, "Michael Jackson")
     .replace(/michelangelo/gi, "Michelangelo")
     .replace(/motown/g, "Motown")
     .replace(/picasso/g, "Picasso")
