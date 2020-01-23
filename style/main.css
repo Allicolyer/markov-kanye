@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "Milford Black";
   src: url(../assets/milfbk__.ttf) format("truetype");
@@ -9,7 +10,6 @@
   margin: 0 0.3em 0.3em 0;
   box-sizing: border-box;
   text-decoration: none;
-  text-transform: uppercase;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   color: #ffffff;
@@ -25,6 +25,12 @@
 }
 .button:active {
   border-color: #ef8b56;
+}
+@media screen and (max-width: 800px) {
+  .button {
+     display: block;
+      margin: 0.4em auto;
+  }
 }
 
 body {

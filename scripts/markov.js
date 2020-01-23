@@ -1,66 +1,76 @@
-import { kanye_quotes } from "./formatted-quotes.js";
+// import { kanye_quotes } from "./formatted-quotes.js";
 
-const generate_map = sentences => {
+export const generate_map = (sentences, order) => {
   const map = {};
+  map._START_ = [];
+  map._ORDER_ = order;
   sentences.forEach(sentence => {
-    add_to_map(sentence, map);
+    add_to_map(sentence, map, order);
   });
   return map;
 };
 
 const add_to_map = (sentence, map) => {
   const new_sentence =
-    "START " +
+    "_START_ " +
     sentence
       .toLowerCase()
       .replace(/[,;]/g, " PAUSE")
       .replace(/[\/#.!?$%\^&\*;:{}=\_`~()]/g, "")
       .replace(/\s\s+/g, " ") +
-    " END";
+    " _END_";
 
   const words = new_sentence.split(" ");
+  const order = map._ORDER_;
 
-  words.forEach((word, index) => {
-    const next_word = words[index + 1];
+  if (order > 1) {
+    map["_START_"].push(words.slice(1, order).join(" "));
+  }
 
-    if (!map[word]) {
+  for (let i = 0; i < words.length - order; i++) {
+    const key = words.slice(i, i + order).join(" ");
+    const next_word = `${words[i + order]}`;
+
+    if (!map[key]) {
       // if nothing exists for that key create an array
-      map[word] = [next_word];
+      map[key] = [next_word];
     } else {
       //otherwise push it onto the array
-      map[word].push(next_word);
+      map[key].push(next_word);
     }
-  });
-  //Remove END from the map
-  delete map.END;
+  }
 };
 
-//creating new sentences
+//create new sentences
 
 export const generate_sentence = map => {
-  let key = "START";
-  let generated_sentence = "";
+  let key = "_START_";
+  let sentence = ["_START_"];
   let max_length = 25;
   let counter = 0;
+  const order = map._ORDER_;
 
-  while (key !== "END") {
+  while (!key.includes("_END_")) {
     //pick a random word from the list. Words that appeared more frequently are listed more than once in the array, so this also function picks words in the proportion that they appear
     let length = map[key].length - 1;
     let random = Math.round(Math.random() * length);
-    key = map[key][random];
-    generated_sentence += `${key} `;
+    let next_word = map[key][random].split(" ");
+    sentence.push(next_word);
+    sentence = sentence.flat();
+    key = sentence.slice(-order).join(" ");
     counter += 1;
     //start over if the sentence is getting too long without reaching an END
     if (counter >= max_length) {
       counter = 0;
-      key = "START";
-      generated_sentence = "";
+      key = "_START_";
+      sentence = ["_START_"];
     }
   }
-  // remove END from sentence, replace PAUSE with commas, capitalize I, I'm, and first letter of the sentence, capitalize all proper nouns
+  // remove _START_ and _END_ from sentence, replace PAUSE with commas, capitalize I, I'm, and first letter of the sentence, capitalize all proper nouns.
+  let quote = sentence.slice(1, sentence.length - 1).join(" ");
   return (
-    generated_sentence.charAt(0).toUpperCase() +
-    generated_sentence.substring(1, generated_sentence.length - 5) +
+    quote.charAt(0).toUpperCase() +
+    quote.substring(1, quote.length) +
     "."
   )
     .replace(/axl rose/gi, "Axl Rose")
@@ -73,6 +83,7 @@ export const generate_sentence = map => {
     .replace(/ i'd /g, " I'd ")
     .replace(/iphone/g, "iPhone")
     .replace(/james perse/gi, "James Perse")
+    .replace(/jesus/gi, "Jesus")
     .replace(/jimi hendrix/gi, "Jimi Hendrix")
     .replace(/jim morrison/gi, "Jim Morrison")
     .replace(/kanye west/gi, "Kanye West")
@@ -94,5 +105,3 @@ export const generate_sentence = map => {
     .replace(/ god /g, " God ")
     .replace(/ PAUSE /g, ", ");
 };
-
-export const map = generate_map(kanye_quotes);

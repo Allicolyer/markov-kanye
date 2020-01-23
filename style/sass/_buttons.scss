@@ -5,7 +5,6 @@
   margin: 0 0.3em 0.3em 0;
   box-sizing: border-box;
   text-decoration: none;
-  text-transform: uppercase;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   color: $secondary-color;
@@ -21,10 +20,8 @@
   &:active {
     border-color: $primary-color;
   }
+  @media screen and (max-width: $medium) {
+     display: block;
+      margin: 0.4em auto;
+  }
 }
-
-// @media all and (max-width:30em){
-//    a.button2{
-//     display:block;
-//     margin:0.4em auto;
-//    }
