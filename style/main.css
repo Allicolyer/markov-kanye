@@ -1,8 +1,4 @@
 @charset "UTF-8";
-@font-face {
-  font-family: "Milford Black";
-  src: url(../assets/milfbk__.ttf) format("truetype");
-}
 .button {
   display: inline-block;
   border-radius: 2em;
@@ -54,7 +50,6 @@ body {
 
 .title {
   text-align: center;
-  font-family: "Milford Black", "Roboto", sans-serif;
 }
 
 .right-align {
