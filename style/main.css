@@ -57,17 +57,6 @@ body {
   }
 }
 
-.speech-container {
-  display: flex;
-  flex-direction: row;
-}
-@media screen and (max-width: 800px) {
-  .speech-container {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
 .switch-container {
   display: flex;
   flex-direction: row;
@@ -77,6 +66,14 @@ body {
 .title {
   text-align: center;
   font-family: "Milford Black", "Roboto", sans-serif;
+}
+
+.less-random {
+  text-align: right;
+}
+
+.more-random {
+  text-align: left;
 }
 
 /* The switch - the box around the slider */
@@ -145,83 +142,51 @@ input:checked + .slider:before {
 .speech-bubble {
   position: relative;
   border: 5px solid #ef8b56;
-  color: #ef8b56;
+  background: #ffffff;
   /* css3 */
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
   width: 400px;
-  /* creates the larger  triangle */
+  min-height: 150px;
   /* creates the smaller  triangle */
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 400px) {
   .speech-bubble {
-    height: 150px;
+    width: 100%;
   }
 }
 .speech-bubble:before {
   content: "";
   position: absolute;
-  bottom: -20px;
+  top: -20px;
   /* value = - border-top-width - border-bottom-width */
-  left: 40px;
+  bottom: auto;
+  left: auto;
+  right: 40px;
   /* controls horizontal position */
-  border-width: 20px 20px 0;
+  border-width: 0 20px 20px;
   border-style: solid;
-  border-color: transparent #ef8b56;
+  border-color: #ef8b56 transparent;
   /* reduce the damage in FF3.0 */
   display: block;
   width: 0;
-  top: 10px;
-  /* controls vertical position */
-  bottom: auto;
-  left: -30px;
-  /* value = - border-left-width - border-right-width */
-  border-width: 15px 30px 15px 0;
-}
-@media screen and (max-width: 800px) {
-  .speech-bubble:before {
-    top: -20px;
-    /* value = - border-top-width - border-bottom-width */
-    bottom: auto;
-    left: auto;
-    right: 40px;
-    /* controls horizontal position */
-    border-width: 0 20px 20px;
-    border-color: #ef8b56 transparent;
-  }
 }
 .speech-bubble:after {
   content: "";
   position: absolute;
-  bottom: -13px;
+  top: -13px;
   /* value = - border-top-width - border-bottom-width */
-  left: 47px;
-  /* value = (:before left) + (:before border-left) - (:after border-left) */
-  border-width: 13px 13px 0;
+  bottom: auto;
+  left: auto;
+  right: 47px;
+  /* value = (:before right) + (:before border-right) - (:after border-right) */
+  border-width: 0 13px 13px;
   border-style: solid;
-  border-color: transparent #ffffff;
+  border-color: #fff transparent;
   /* reduce the damage in FF3.0 */
   display: block;
   width: 0;
-  top: 16px;
-  /* value = (:before top) + (:before border-top) - (:after border-top) */
-  bottom: auto;
-  left: -21px;
-  /* value = - border-left-width - border-right-width */
-  border-width: 9px 21px 9px 0;
-}
-@media screen and (max-width: 800px) {
-  .speech-bubble:after {
-    top: -13px;
-    /* value = - border-top-width - border-bottom-width */
-    bottom: auto;
-    left: auto;
-    right: 47px;
-    /* value = (:before right) + (:before border-right) - (:after border-right) */
-    border-width: 0 13px 13px;
-    border-color: #ffffff transparent;
-  }
 }
 
 .vertical-center {

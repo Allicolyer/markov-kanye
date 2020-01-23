@@ -1,67 +1,47 @@
 .speech-bubble {
   position: relative;
   border: 5px solid $primary-color;
-  color: $primary-color;
+  background: $background-color;
   /* css3 */
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
   width: 400px;
-  @media screen and (max-width: $medium) {
-    height: 150px;
+  min-height: 150px;
+  @media screen and (max-width: $small) {
+    width: 100%;
   }
 
-  /* creates the larger  triangle */
   &:before {
     content: "";
     position: absolute;
-    bottom: -20px; /* value = - border-top-width - border-bottom-width */
-    left: 40px; /* controls horizontal position */
-    border-width: 20px 20px 0;
+    top: -20px; /* value = - border-top-width - border-bottom-width */
+    bottom: auto;
+    left: auto;
+    right: 40px; /* controls horizontal position */
+    border-width: 0 20px 20px;
     border-style: solid;
-    border-color: transparent $primary-color;
+    border-color: $primary-color transparent;
     /* reduce the damage in FF3.0 */
     display: block;
     width: 0;
-    top: 10px; /* controls vertical position */
-    bottom: auto;
-    left: -30px; /* value = - border-left-width - border-right-width */
-    border-width: 15px 30px 15px 0;
-    @media screen and (max-width: $medium) {
-      top: -20px; /* value = - border-top-width - border-bottom-width */
-      bottom: auto;
-      left: auto;
-      right: 40px; /* controls horizontal position */
-      border-width: 0 20px 20px;
-      border-color: $primary-color transparent;
-    }
   }
 
   /* creates the smaller  triangle */
   &:after {
     content: "";
     position: absolute;
-    bottom: -13px; /* value = - border-top-width - border-bottom-width */
-    left: 47px; /* value = (:before left) + (:before border-left) - (:after border-left) */
-    border-width: 13px 13px 0;
+    top: -13px; /* value = - border-top-width - border-bottom-width */
+    bottom: auto;
+    left: auto;
+    right: 47px; /* value = (:before right) + (:before border-right) - (:after border-right) */
+    border-width: 0 13px 13px;
     border-style: solid;
-    border-color: transparent $secondary-color;
+    border-color: #fff transparent;
     /* reduce the damage in FF3.0 */
     display: block;
     width: 0;
-    top: 16px; /* value = (:before top) + (:before border-top) - (:after border-top) */
-    bottom: auto;
-    left: -21px; /* value = - border-left-width - border-right-width */
-    border-width: 9px 21px 9px 0;
-    @media screen and (max-width: $medium) {
-      top: -13px; /* value = - border-top-width - border-bottom-width */
-      bottom: auto;
-      left: auto;
-      right: 47px; /* value = (:before right) + (:before border-right) - (:after border-right) */
-      border-width: 0 13px 13px;
-      border-color: $secondary-color transparent;
-    }
   }
 }
 
-// source: http://nicolasgallagher.com/pure-css-speech-bubbles/demo/
+// source: http://nicolasgallagher.com/pure-css-speech-bubbles/demo/default.css

@@ -23,14 +23,6 @@ body {
   }
 }
 
-.speech-container {
-  display: flex;
-  flex-direction: row;
-  @media screen and (max-width: $medium) {
-    flex-direction: column;
-    align-items: center;
-  }
-}
 .switch-container {
   display: flex;
   flex-direction: row;
@@ -40,4 +32,12 @@ body {
 .title {
   text-align: center;
   font-family: $headings-font;
+}
+
+.less-random {
+  text-align: right;
+}
+
+.more-random {
+  text-align: left;
 }
