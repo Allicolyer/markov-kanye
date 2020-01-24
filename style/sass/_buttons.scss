@@ -19,6 +19,11 @@
     border-color: $primary-color;
     background-color: $background-color;
   }
+  &:focus {
+    color: $secondary-color;
+    border-color: $primary-color;
+    background-color: $primary-color;
+  }
   &:active {
     border-color: $primary-color;
   }

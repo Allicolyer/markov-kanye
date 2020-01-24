@@ -274,7 +274,7 @@ export const kanye_quotes = [
   "They want you to have a reputation of tucking your black nail polish into your pockets and sitting in the corner of the class, and not fighting for your ideas out of fear of being ridiculed.",
   "That's one of my favourite ones…to be called crazy.",
   "For me, you know, I'm a creative genius and there's no other way to word it.",
-  "50 is Eminem's favourite rapper… I'm my favourite rapper.",
+  "50 is Eminem's favourite rapper; I'm my favourite rapper.",
   "I will go down as the voice of this generation, of this decade I will be the loudest voice.",
   "My greatest pain in life is that I'll never be able to see myself perform live.",
   "I am a God, so hurry up with my damn massage in a French-ass restaurant, hurry up with my damn croissants.",
