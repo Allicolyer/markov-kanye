@@ -100,6 +100,7 @@ export const generate_sentence = map => {
     .replace(/paris/g, "Paris")
     .replace(/regis/gi, "Regis")
     .replace(/rick owens/gi, "Rick Owens")
+    .replace(/shakespeare/gi, "Shakespeare")
     .replace(/steve jobs/gi, "Steve Jobs")
     .replace(/trump/gi, "Trump")
     .replace(/walt disney/gi, "Walt Disney")
