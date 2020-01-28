@@ -7,7 +7,6 @@
   border: 0.16em solid $primary-color;
   box-sizing: border-box;
   text-decoration: none;
-  font-family: "Roboto", sans-serif;
   font-weight: 400;
   color: $secondary-color;
   border-color: $primary-color;
@@ -15,12 +14,11 @@
   text-align: center;
   transition: all 0.15s;
   &:hover {
-    color: $primary-color;
+    font-weight: bold;
     border-color: $primary-color;
     background-color: $background-color;
   }
   &:focus {
-    color: $secondary-color;
     border-color: $primary-color;
     background-color: $primary-color;
   }

@@ -6,18 +6,21 @@
   border: 0.16em solid #ef8b56;
   box-sizing: border-box;
   text-decoration: none;
-  font-family: "Roboto", sans-serif;
   font-weight: 400;
-  color: #ffffff;
+  color: #12190a;
   border-color: #ef8b56;
   background-color: #ef8b56;
   text-align: center;
   transition: all 0.15s;
 }
 .button:hover {
-  color: #ef8b56;
+  font-weight: bold;
   border-color: #ef8b56;
   background-color: #ffffff;
+}
+.button:focus {
+  border-color: #ef8b56;
+  background-color: #ef8b56;
 }
 .button:active {
   border-color: #ef8b56;
@@ -28,18 +31,43 @@
   }
 }
 
+html {
+  font-size: 1.125em;
+  color: #12190a;
+}
+
 body {
   font: 100% Helvetica, sans-serif;
   background-color: #ffffff;
-  color: #ef8b56;
 }
 
 .content {
   display: flex;
   flex-direction: column;
   width: 80%;
-  align-items: center;
   justify-content: center;
+}
+
+.contributors {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.contributors .bio {
+  width: 200px;
+  text-align: center;
+}
+.contributors .bio img {
+  border-radius: 100%;
+  width: 100px;
+  display: block;
+}
+.contributors .bio a {
+  color: #ef8b56;
+}
+
+.index-content {
+  align-items: center;
 }
 
 .switch-container {
@@ -49,6 +77,7 @@ body {
 }
 
 .title {
+  font-family: "Rubik", Impact;
   text-align: center;
 }
 
@@ -257,9 +286,16 @@ input:checked + .slider:before {
   margin-right: 15px;
 }
 
+@font-face {
+  font-family: "Rubik";
+  src: url("../assets/rubrik/RubikMonoOne-Regular.eot");
+  src: url("../assets/rubrik/RubikMonoOne-Regular.eot?#iefix") format("embedded-opentype"), url("../assets/rubrik/RubikMonoOne-Regular.otf") format("opentype"), url("../assets/rubrik/RubikMonoOne-Regular.svg") format("svg"), url("../assets/rubrik/RubikMonoOne-Regular.ttf") format("truetype"), url("../assets/rubrik/RubikMonoOne-Regular.woff") format("woff"), url("../assets/rubrik/RubikMonoOne-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
 nav {
   background-color: #ef8b56;
-  color: #ffffff;
+  color: #12190a;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -267,7 +303,7 @@ nav {
   min-height: 50px;
 }
 nav a {
-  color: #ffffff;
+  color: #12190a;
   text-decoration: none;
 }
 
