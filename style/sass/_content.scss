@@ -1,15 +1,40 @@
+html {
+  font-size: 1.125em;
+  color: $text-color;
+}
+
 body {
   font: 100% $font-stack;
   background-color: $background-color;
-  color: $primary-color;
 }
 
 .content {
   display: flex;
   flex-direction: column;
   width: 80%;
-  align-items: center;
   justify-content: center;
+}
+
+.contributors {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  .bio {
+    width: 200px;
+    text-align: center;
+    img {
+      border-radius: 100%;
+      width: 100px;
+      display: block;
+    }
+    a {
+      color: $primary-color;
+    }
+  }
+}
+
+.index-content {
+  align-items: center;
 }
 
 .switch-container {
@@ -19,6 +44,7 @@ body {
 }
 
 .title {
+  font-family: $headings-font;
   text-align: center;
 }
 
