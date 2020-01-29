@@ -42,11 +42,56 @@ body {
   background-color: #ffffff;
 }
 
+h1 {
+  text-align: center;
+}
+
+a {
+  color: #ef8b56;
+}
+
+ul {
+  margin: 0;
+}
+
+.title {
+  font-family: "Rubik", Impact;
+  margin: 0;
+}
+
+.right-align {
+  text-align: right;
+}
+
+.left-align {
+  text-align: left;
+}
+
 .content {
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 75%;
   justify-content: center;
+}
+@media screen and (max-width: 800px) {
+  .content {
+    width: 85%;
+  }
+}
+
+.index-content {
+  align-items: center;
+}
+
+#quote-text {
+  margin-top: 45px;
+  margin-bottom: 45px;
+}
+
+.switch-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .contributors {
@@ -62,32 +107,6 @@ body {
   border-radius: 100%;
   width: 100px;
   display: block;
-}
-.contributors .bio a {
-  color: #ef8b56;
-}
-
-.index-content {
-  align-items: center;
-}
-
-.switch-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.title {
-  font-family: "Rubik", Impact;
-  text-align: center;
-}
-
-.right-align {
-  text-align: right;
-}
-
-.left-align {
-  text-align: left;
 }
 
 .kanye-img {

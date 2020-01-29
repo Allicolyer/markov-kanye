@@ -1,3 +1,5 @@
+//general styles
+
 html {
   font-size: 1.125em;
   color: $text-color;
@@ -8,13 +10,57 @@ body {
   background-color: $background-color;
 }
 
+h1 {
+  text-align: center;
+}
+
+a {
+  color: $primary-color;
+}
+
+ul {
+  margin: 0;
+}
+
+.title {
+  font-family: $headings-font;
+  margin: 0;
+}
+
+.right-align {
+  text-align: right;
+}
+
+.left-align {
+  text-align: left;
+}
+
 .content {
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 75%;
   justify-content: center;
+  @media screen and (max-width: $medium) {
+    width: 85%;
+  }
+}
+//index pages styles
+.index-content {
+  align-items: center;
 }
 
+#quote-text {
+  margin-top: 45px;
+  margin-bottom: 45px;
+}
+
+.switch-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+//about pages tyles
 .contributors {
   display: flex;
   justify-content: space-around;
@@ -27,31 +73,5 @@ body {
       width: 100px;
       display: block;
     }
-    a {
-      color: $primary-color;
-    }
   }
-}
-
-.index-content {
-  align-items: center;
-}
-
-.switch-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.title {
-  font-family: $headings-font;
-  text-align: center;
-}
-
-.right-align {
-  text-align: right;
-}
-
-.left-align {
-  text-align: left;
 }

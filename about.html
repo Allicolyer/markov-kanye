@@ -1,6 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/favicon/favicon-16x16.png"
+    />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -23,13 +40,13 @@
       </nav>
     </header>
     <div class="content my-3 vertical-center">
-      <h1 class="title">About Kanye.fun</h1>
+      <h1 class="title my-3">About Kanye.fun</h1>
       <div class="my-3">
         This site uses Markov chains to generate quotes that sound like Kanye
         West.
       </div>
-      <h3 class="title">Markov Chains Explained</h3>
-      <div class="my-3">
+      <h3 class="title my-3">Markov Chains Explained</h3>
+      <div class="mb-3">
         A ‘Markov Process’ is a process for which the probability of the next
         thing that will happen only depends on the last thing that happened, and
         not everything before it. Let’s say you wanted to make a prediction
@@ -37,7 +54,7 @@
         at the team’s winning history, you look only at the last one or two
         games and decide based on that. This is the idea behind Markov chains.
       </div>
-      <div class="my-3">
+      <div class="mb-3">
         Markov chains are frequently used to generate text that mimics the style
         or sound of other sentences. For example, let’s create a Markov chain to
         generate text that sounds like Dr. Suess. Our input sentence is: “One
@@ -46,40 +63,40 @@
         next. So, the word ‘fish’ comes after ‘one’, and the word ‘two’ comes
         after ‘fish’. We do this until we’re finished with our input.
       </div>
-      <ol>
+      <ul class="mb-3">
         <li>one: fish</li>
         <li>fish: two, red, blue</li>
         <li>two: fish</li>
         <li>red: fish</li>
         <li>blue: fish</li>
-      </ol>
-      <div class="my-3">
+      </ul>
+      <div class="mb-3">
         We now have a Markov chain that can be used to generate a new Dr. Suess
         sentence. To do that, first, pick a word to start with, let’s say ‘two’.
         Pick one word that comes after ‘two’ and add it to the sentence. Here it
         would be ‘fish’.
       </div>
-      <div class="my-3">
+      <div class="mb-3">
         “Two fish”
       </div>
-      <div class="my-3">
+      <div class="mb-3">
         The last word in our sentence is fish, so now pick a word from the
         Markov chain that comes after ‘fish’ and add it to the sentence. Let’s
         say we pick ‘blue’.
       </div>
-      <div class="my-3">
+      <div class="mb-3">
         “Two fish blue”
       </div>
-      <div class="my-3">
+      <div class="mb-3">
         Now ‘blue’ is the last word, so pick a word that comes after ‘blue’ in
         our Markov chain and add it to the sentence. After a few more
         iterations, we’ll get something that sounds like Dr. Suess.
       </div>
-      <div class="my-3">
+      <div class="mb-3">
         “Two fish blue fish red fish two”
       </div>
-      <h3 class="title">How Kanye.fun works</h3>
-      <div class="my-3">
+      <h3 class="title my-3">How Kanye.fun works</h3>
+      <div class="mb-3">
         This site builds a Markov chain from two-hundred different Kanye West
         quotes and uses that chain to generate quotes in a similar style to
         Kanye. The Markov chain weights word differently based on how often they
@@ -89,7 +106,7 @@
         like with any Markov chain, there is always a chance that the generated
         Kanye West quote is actually a real Kanye West quote.
       </div>
-      <div class="my-3">
+      <div class="mb-3">
         Switching between ‘more random’ and ‘less random’ lets you choose
         between using a first-order Markov chain and a second-order Markov
         chain. First-order Markov chains reply only on the last word to pick the
@@ -98,11 +115,11 @@
         generates quotes that sound more like Kanye, while the first-order chain
         generates sentences that are more jumbled and random.
       </div>
-      <h3 class="title">Contributors</h3>
-      <div class="contributors my-3">
+      <h3 class="title my-3">Contributors</h3>
+      <div class="contributors mb-3">
         <div class="bio">
           <img
-            class="my-3 vertical-center"
+            class="mb-3 vertical-center"
             src="https://avatars1.githubusercontent.com/u/11083917?s=460&v=4"
           />
           Kanye.fun was created by
@@ -112,7 +129,7 @@
         </div>
         <div class="bio">
           <img
-            class="my-3 vertical-center"
+            class="mb-3 vertical-center"
             src="https://avatars1.githubusercontent.com/u/9114194?s=460&v=4"
           />
           Thanks to
@@ -121,7 +138,7 @@
         </div>
         <div class="bio">
           <img
-            class="my-3 vertical-center"
+            class="mb-3 vertical-center"
             src="https://media-exp1.licdn.com/dms/image/C5603AQFKfGxEaciQ8A/profile-displayphoto-shrink_200_200/0?e=1585785600&v=beta&t=kp8MkFGuxXcLItZJNigLpLUb34PkQqSP3qkPR_hvuj0"
           />
           Thanks to
@@ -132,7 +149,7 @@
         </div>
         <div class="bio">
           <img
-            class="my-3 vertical-center"
+            class="mb-3 vertical-center"
             src="https://avatars3.githubusercontent.com/u/6632604?s=460&v=4"
           />
           Thanks to
@@ -143,7 +160,7 @@
         </div>
         <div class="bio">
           <img
-            class="my-3 vertical-center"
+            class="mb-3 vertical-center"
             src="https://d29xw0ra2h4o4u.cloudfront.net/assets/logo_square-051508b5ecf8868635aea567bb86f423f4d1786776e5dfce4adf2bc7edf05804.png"
           />
           Thanks to
@@ -151,8 +168,8 @@
           for supporting this project.
         </div>
       </div>
-      <h3 class="title">Coming Soon</h3>
-      <div class="my-3">
+      <h3 class="title my-3">Coming Soon</h3>
+      <div class="mb-3">
         If you loved Kanye.fun, I’ll soon be working on spinning up an API
         endpoint so that you can use generated Kanye quotes in whatever web
         project you want. Keep an eye out for updates!
