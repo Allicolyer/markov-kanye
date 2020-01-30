@@ -74,6 +74,9 @@ export const generate_sentence = map => {
     "."
   )
     .replace(/axl rose/gi, "Axl Rose")
+    .replace(/america/gi, "America")
+    .replace(/american/gi, "American")
+    .replace(/america's/gi, "America's")
     .replace(/eminem/gi, "Eminem")
     .replace(/george bush/gi, "George Bush")
     .replace(/henry ford/gi, "Henry Ford")

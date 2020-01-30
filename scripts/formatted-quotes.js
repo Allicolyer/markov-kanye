@@ -60,7 +60,7 @@ export const kanye_quotes = [
   "Fashion breaks my heart.",
   "Thirty-three-years-old, still creating art.",
   "It's rage, it's creativity, it's pain, it's hurt, but it's the opportunity to still have my voice get out there through music.",
-  "I thank Marc Jacobs so much for giving me the opportunity to design a shoe for Louis Vuitton, but the thing that broke my heart most was when they said,you're finished.",
+  "I thank Marc Jacobs so much for giving me the opportunity to design a shoe for Louis Vuitton, but the thing that broke my heart most was when they said, you're finished.",
   "The shoe's finished.",
   "Keep your nose out the sky, keep your heart to god, and keep your face to the raising sun.",
   "Our work is never over.",

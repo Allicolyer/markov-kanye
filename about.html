@@ -56,12 +56,12 @@
       </div>
       <div class="mb-3">
         Markov chains are frequently used to generate text that mimics the style
-        or sound of other sentences. For example, let’s create a Markov chain to
-        generate text that sounds like Dr. Suess. Our input sentence is: “One
-        fish two fish red fish blue fish”. To create the Markov chain, we first
-        go through each word in the sentence and write down the word that comes
-        next. So, the word ‘fish’ comes after ‘one’, and the word ‘two’ comes
-        after ‘fish’. We do this until we’re finished with our input.
+        or sound of some other text. For example, let’s create a Markov chain to
+        generate sentences that sounds like Dr. Suess. Our input sentence is:
+        “One fish two fish red fish blue fish”. To create the Markov chain, we
+        first go through each word in the sentence and write down the word that
+        comes next. So, the word ‘fish’ comes after ‘one’, and the word ‘two’
+        comes after ‘fish’. We do this until we’re finished with our input.
       </div>
       <ul class="mb-3">
         <li>one: fish</li>
@@ -102,14 +102,14 @@
         Kanye. The Markov chain weights word differently based on how often they
         appear next to each other. So for instance, if six quotes have the
         combination ‘I am’ and only one has the combination ‘I have’, ‘I am’ is
-        six times more likely to appear in a generate quote than ‘I have’. Just
+        six times more likely to appear in a generated quote than ‘I have’. Just
         like with any Markov chain, there is always a chance that the generated
         Kanye West quote is actually a real Kanye West quote.
       </div>
       <div class="mb-3">
         Switching between ‘more random’ and ‘less random’ lets you choose
         between using a first-order Markov chain and a second-order Markov
-        chain. First-order Markov chains reply only on the last word to pick the
+        chain. First-order Markov chains use only on the last word to pick the
         next word in a sentence. Second-order Markov chains use the last two
         words in a sentence to predict the next one. The second-order chain
         generates quotes that sound more like Kanye, while the first-order chain
