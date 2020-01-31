@@ -1,76 +1,75 @@
-// import { kanye_quotes } from "./formatted-quotes.js";
+export const createMarkovChain = (quotes, order) => {
+  const markovChain = {};
+  markovChain._ORDER_ = order;
+  markovChain._START_ = [];
 
-export const generate_map = (sentences, order) => {
-  const map = {};
-  map._START_ = [];
-  map._ORDER_ = order;
-  sentences.forEach(sentence => {
-    add_to_map(sentence, map, order);
-  });
-  return map;
-};
+  // Add _START_ and _END_ to each quote, make everything lowercase, replace all commas and semi-colon with _PAUSE_, remove other puncuation, remove extra spaces
+  quotes.forEach(quote => {
+    const newQuote =
+      "_START_ " +
+      quote
+        .toLowerCase()
+        .replace(/[\/#.!?$%\^&\*:{}=\_`~()]/g, "")
+        .replace(/[,;]/g, " _PAUSE_")
+        .replace(/\s\s+/g, " ") +
+      " _END_";
 
-const add_to_map = (sentence, map) => {
-  const new_sentence =
-    "_START_ " +
-    sentence
-      .toLowerCase()
-      .replace(/[,;]/g, " PAUSE")
-      .replace(/[\/#.!?$%\^&\*;:{}=\_`~()]/g, "")
-      .replace(/\s\s+/g, " ") +
-    " _END_";
+    //Turn each quote into an array called words
+    const words = newQuote.split(" ");
+    const order = markovChain._ORDER_;
 
-  const words = new_sentence.split(" ");
-  const order = map._ORDER_;
-
-  if (order > 1) {
-    map["_START_"].push(words.slice(1, order).join(" "));
-  }
-
-  for (let i = 0; i < words.length - order; i++) {
-    const key = words.slice(i, i + order).join(" ");
-    const next_word = `${words[i + order]}`;
-
-    if (!map[key]) {
-      // if nothing exists for that key create an array
-      map[key] = [next_word];
-    } else {
-      //otherwise push it onto the array
-      map[key].push(next_word);
+    //If the order is greater than 1, add starting words to the Markov chain under the key "_START_"
+    if (order > 1) {
+      markovChain["_START_"].push(words.slice(1, order).join(" "));
     }
-  }
+
+    //For each combination of words that is 'order' long, add them as a key to the Markov chain and add the next word as the value
+    for (let i = 0; i < words.length - order; i++) {
+      const key = words.slice(i, i + order).join(" ");
+      const next_word = `${words[i + order]}`;
+
+      if (!markovChain[key]) {
+        // if nothing exists for that key create an array
+        markovChain[key] = [next_word];
+      } else {
+        //otherwise push it onto the array
+        markovChain[key].push(next_word);
+      }
+    }
+  });
+  return markovChain;
 };
 
-//create new sentences
-
-export const generate_sentence = map => {
+//Generate a quote from a Markov chain
+export const generateQuote = markovChain => {
   let key = "_START_";
-  let sentence = ["_START_"];
+  let quote = ["_START_"];
   let max_length = 25;
   let counter = 0;
-  const order = map._ORDER_;
+  const order = markovChain._ORDER_;
 
   while (!key.includes("_END_")) {
-    //pick a random word from the list. Words that appeared more frequently are listed more than once in the array, so this also function picks words in the proportion that they appear
-    let length = map[key].length - 1;
+    //Pick a random word from the list. Words that appeared more frequently are listed more than once in the array, so words will be picked in proportion to their frequency
+    let length = markovChain[key].length - 1;
     let random = Math.round(Math.random() * length);
-    let next_word = map[key][random].split(" ");
-    sentence.push(next_word);
-    sentence = sentence.flat();
-    key = sentence.slice(-order).join(" ");
+    let next_word = markovChain[key][random].split(" ");
+    quote.push(next_word);
+    quote = quote.flat();
+    key = quote.slice(-order).join(" ");
     counter += 1;
-    //start over if the sentence is getting too long without reaching an END
+    //start over if the quote is getting too long without reaching an _END_
     if (counter >= max_length) {
       counter = 0;
       key = "_START_";
-      sentence = ["_START_"];
+      quote = ["_START_"];
     }
   }
-  // remove _START_ and _END_ from sentence, replace PAUSE with commas, capitalize I, I'm, and first letter of the sentence, capitalize all proper nouns.
-  let quote = sentence.slice(1, sentence.length - 1).join(" ");
+
+  // remove _START_ and _END_ from quote, replace _PAUSE_ with commas, capitalize I, I'm, and first letter of the quote, capitalize all proper nouns.
+  let formattedQuote = quote.slice(1, quote.length - 1).join(" ");
   return (
-    quote.charAt(0).toUpperCase() +
-    quote.substring(1, quote.length) +
+    formattedQuote.charAt(0).toUpperCase() +
+    formattedQuote.substring(1, formattedQuote.length) +
     "."
   )
     .replace(/axl rose/gi, "Axl Rose")
@@ -83,6 +82,7 @@ export const generate_sentence = map => {
     .replace(/howard hughes/gi, "Howard Hughes")
     .replace(/ i /g, " I ")
     .replace(/ i'm /g, " I'm ")
+    .replace(/ i'll /g, " I'll ")
     .replace(/ i've /g, " I've ")
     .replace(/ i'd /g, " I'd ")
     .replace(/iphone/g, "iPhone")
@@ -111,5 +111,5 @@ export const generate_sentence = map => {
     .replace(/willy wonka/gi, "Willy Wonka")
     .replace(/ god's /g, " God's ")
     .replace(/ god /g, " God ")
-    .replace(/ PAUSE /g, ", ");
+    .replace(/ _PAUSE_ /g, ", ");
 };

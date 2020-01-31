@@ -1,9 +1,9 @@
-import { generate_map, generate_sentence } from "./markov.js";
-import { kanye_quotes } from "./formatted-quotes.js";
+import { createMarkovChain, generateQuote } from "./markov.js";
+import { kanyeQuotes } from "./formatted-quotes.js";
 
-const first_order_map = generate_map(kanye_quotes, 1);
-const second_order_map = generate_map(kanye_quotes, 2);
-let map = second_order_map;
+const firstOrderChain = createMarkovChain(kanyeQuotes, 1);
+const secondOrderChain = createMarkovChain(kanyeQuotes, 2);
+let markovChain = secondOrderChain;
 
 //wait until the DOM is loaded before adding event listeners
 document.addEventListener("DOMContentLoaded", function() {
@@ -14,14 +14,14 @@ document.addEventListener("DOMContentLoaded", function() {
   //toggles between the first order and second order markov chains
   checkbox.addEventListener("change", function() {
     if (this.checked) {
-      map = first_order_map;
+      markovChain = firstOrderChain;
     } else {
-      map = second_order_map;
+      markovChain = secondOrderChain;
     }
   });
 
   //Generate new setnence
   quoteButton.onclick = () => {
-    quoteText.innerHTML = generate_sentence(map);
+    quoteText.innerHTML = generateQuote(markovChain);
   };
 });

@@ -1,4 +1,4 @@
-export const kanye_quotes = [
+export const kanyeQuotes = [
   "I refuse to accept other people's ideas of happiness for me.",
   "As if there's a one size fits all standard for happiness.",
   "We came into a broken world.",
@@ -138,7 +138,7 @@ export const kanye_quotes = [
   "I want to help people.",
   "I'm here to fight for the re-education of what celebrity is: to say, yes, we are celebrities, but yes, we're also innovators.",
   "We're also inventors.",
-  "We're also thoughtful. ",
+  "We're also thoughtful.",
   "The concept of Kimye has more cultural significance than what Page Six could write.",
   "My favorite record label of all time is Motown.",
   "That era of music was my favorite.",
