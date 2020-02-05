@@ -72,8 +72,10 @@ generates sentences that are more jumbled and random.
 - Thanks to [Chloe Revery](https://github.com/chloerevery)
 - Thanks to [Recurse Center](https://www.recurse.com/) for supporting this project.
 
-### Coming Soon
+### API Endpoints
 
-If you loved Kanye.fun, I’ll soon be working on spinning up an API
-endpoint so that you can use generated Kanye quotes in whatever web
-project you want. Keep an eye out for updates!
+If you want to use generated Kanye West quotes in your own project, here is how you can use Kanye as a Service.
+
+- Generate Kanye West quotes. Include a number at the end of the URL to specify the order Markov chain you want to use. [https://kanyefun.now.sh/quote/2](https://kanyefun.now.sh/quote/2)
+- Generate a Markov Chain from the quotes used in this project. Specify the order by putting a number to the end of the URL. [https://kanyefun.now.sh/markov/1](https://kanyefun.now.sh/markov/1)
+- Fetch all of the Kanye West quotes used for this project. [https://kanyefun.now.sh/kanyequotes](https://kanyefun.now.sh/kanyequotes)
