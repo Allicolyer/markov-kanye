@@ -94,19 +94,46 @@ ul {
   align-items: center;
 }
 
-.contributors {
+.row-flex, .contributors, .api-div {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
 }
-.contributors .bio {
+
+.contributors .bio, .api-div .bio {
   width: 200px;
   text-align: center;
 }
-.contributors .bio img {
+.contributors .bio img, .api-div .bio img {
   border-radius: 100%;
   width: 100px;
   display: block;
+}
+
+.api-div {
+  padding-top: 15px;
+  border: 2px solid #12190a;
+  border-bottom: none;
+}
+.api-div:last-child {
+  border-bottom: 2px solid #12190a;
+}
+.api-div .api-description {
+  width: 45%;
+}
+@media screen and (max-width: 800px) {
+  .api-div .api-description {
+    width: 100%;
+  }
+}
+.api-div a {
+  width: 45%;
+  text-align: center;
+}
+@media screen and (max-width: 800px) {
+  .api-div a {
+    width: 100%;
+  }
 }
 
 .kanye-img {

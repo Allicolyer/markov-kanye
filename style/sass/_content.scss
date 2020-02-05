@@ -60,11 +60,15 @@ ul {
   align-items: center;
 }
 
-//about pages tyles
-.contributors {
+//about page styles
+.flex-space-around {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+}
+
+.contributors {
+  @extend .flex-space-around;
   .bio {
     width: 200px;
     text-align: center;
@@ -72,6 +76,31 @@ ul {
       border-radius: 100%;
       width: 100px;
       display: block;
+    }
+  }
+}
+
+.api-div {
+  @extend .flex-space-around;
+  padding-top: 15px;
+  border: 2px solid $secondary-color;
+  border-bottom: none;
+  &:last-child {
+    border-bottom: 2px solid $secondary-color;
+  }
+
+  .api-description {
+    width: 45%;
+    @media screen and (max-width: $medium) {
+      width: 100%;
+    }
+  }
+
+  a {
+    width: 45%;
+    text-align: center;
+    @media screen and (max-width: $medium) {
+      width: 100%;
     }
   }
 }
