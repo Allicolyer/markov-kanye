@@ -16,7 +16,6 @@ export const createMarkovChain = (quotes, order) => {
 
     //Turn each quote into an array called words
     const words = newQuote.split(" ");
-    const order = markovChain._ORDER_;
 
     //If the order is greater than 1, add starting words to the Markov chain under the key "_START_"
     if (order > 1) {
@@ -42,8 +41,9 @@ export const createMarkovChain = (quotes, order) => {
 
 //Generate a quote from a Markov chain
 export const generateQuote = markovChain => {
-  let key = "_START_";
-  let quote = ["_START_"];
+  const start = "_START_";
+  let key = start;
+  let quote = [];
   let max_length = 25;
   let counter = 0;
   const order = markovChain._ORDER_;
@@ -52,16 +52,22 @@ export const generateQuote = markovChain => {
     //Pick a random word from the list. Words that appeared more frequently are listed more than once in the array, so words will be picked in proportion to their frequency
     let length = markovChain[key].length - 1;
     let random = Math.round(Math.random() * length);
-    let next_word = markovChain[key][random].split(" ");
-    quote.push(next_word);
-    quote = quote.flat();
+
+    //the start key can hvae values that are more than one word, so we need to spread them into the quote.
+    if (key === start) {
+      let first_words = markovChain[key][random].split(" ");
+      quote = [start, ...first_words];
+    } else {
+      let next_word = markovChain[key][random];
+      quote.push(next_word);
+    }
     key = quote.slice(-order).join(" ");
     counter += 1;
     //start over if the quote is getting too long without reaching an _END_
     if (counter >= max_length) {
       counter = 0;
-      key = "_START_";
-      quote = ["_START_"];
+      key = start;
+      quote = [];
     }
   }
 
